@@ -16,6 +16,7 @@ public struct V2GetHealthResponse: Sendable, Codable, Hashable {
         case v2 = "v2"
     }
     public enum Environment: String, Sendable, Codable, CaseIterable {
+        case production = "production"
         case v2Test = "v2-test"
     }
     public var status: Status

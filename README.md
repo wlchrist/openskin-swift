@@ -10,21 +10,27 @@ and select version `0.1.0` or newer.
 ## Example
 
 ```swift
+import Foundation
 import OpenSkinClient
 
+guard let apiKey = ProcessInfo.processInfo.environment["OPENSKIN_API_KEY"] else {
+    fatalError("set OPENSKIN_API_KEY before running")
+}
 let configuration = OpenSkin.configuration(
-    apiKey: ProcessInfo.processInfo.environment["OPENSKIN_API_KEY"]!
+    apiKey: apiKey
 )
-let health = try await PlatformV2API.getV2Health(
+let account = try await PlatformV2API.getV2Principal(
     apiConfiguration: configuration
 )
-print(health.status)
+print(account.tier)
 ```
 
 The client uses `https://api-v2.openskin.dev` by default. Create an API key in
 the [OpenSkin dashboard](https://platform.openskin.dev/dashboard).
 
-Requests and responses use typed `Codable` models. Required headers such as
-`Idempotency-Key` and `If-Match` are method arguments.
+See the [API reference](https://platform.openskin.dev/docs/platform) for the
+available operations. Requests and responses use typed `Codable` models.
+Endpoints that require `Idempotency-Key` or `If-Match` expose those headers as
+required method arguments.
 
 Licensed under the MIT License.
