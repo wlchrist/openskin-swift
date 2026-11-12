@@ -104,6 +104,7 @@ Sources/OpenSkinClient/Models/V2GetPriceHistoryResponse.swift
 Sources/OpenSkinClient/Models/V2GetSceneResponse.swift
 Sources/OpenSkinClient/Models/V2GetSteamAccountHealthResponse.swift
 Sources/OpenSkinClient/Models/V2GetSteamFriendsResponse.swift
+Sources/OpenSkinClient/Models/V2GetSteamPartnerInventoryResponse.swift
 Sources/OpenSkinClient/Models/V2GetSteamProfileBatchResponse.swift
 Sources/OpenSkinClient/Models/V2GetSteamProfileResponse.swift
 Sources/OpenSkinClient/Models/V2GetSteamTradeEligibilityResponse.swift
@@ -128,8 +129,11 @@ Sources/OpenSkinClient/Models/V2InventoryBatchRequest.swift
 Sources/OpenSkinClient/Models/V2InventoryBatchResponse.swift
 Sources/OpenSkinClient/Models/V2InventoryBatchResult.swift
 Sources/OpenSkinClient/Models/V2InventoryCatalogItem.swift
+Sources/OpenSkinClient/Models/V2InventoryFetchRequest.swift
+Sources/OpenSkinClient/Models/V2InventoryFreshness.swift
 Sources/OpenSkinClient/Models/V2InventoryHistoryEntry.swift
 Sources/OpenSkinClient/Models/V2InventoryHistoryPage.swift
+Sources/OpenSkinClient/Models/V2InventoryRequestProxy.swift
 Sources/OpenSkinClient/Models/V2InventorySnapshot.swift
 Sources/OpenSkinClient/Models/V2InventorySnapshotAssetsInner.swift
 Sources/OpenSkinClient/Models/V2InventorySnapshotCache.swift
@@ -236,6 +240,8 @@ Sources/OpenSkinClient/Models/V2SteamFriendList.swift
 Sources/OpenSkinClient/Models/V2SteamIDFormats.swift
 Sources/OpenSkinClient/Models/V2SteamIdentityResolution.swift
 Sources/OpenSkinClient/Models/V2SteamLoginRequest.swift
+Sources/OpenSkinClient/Models/V2SteamPartnerInventoryObservation.swift
+Sources/OpenSkinClient/Models/V2SteamPartnerInventoryRequest.swift
 Sources/OpenSkinClient/Models/V2SteamProfile.swift
 Sources/OpenSkinClient/Models/V2SteamTradeBudgetUsage.swift
 Sources/OpenSkinClient/Models/V2SteamTradeEligibility.swift

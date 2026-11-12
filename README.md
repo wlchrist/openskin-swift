@@ -5,7 +5,7 @@ Swift 6 async client for the OpenSkin Platform API.
 ## Install
 
 Add `https://github.com/wlchrist/openskin-swift` as a Swift Package dependency
-and select version `0.1.0` or newer.
+and select version `0.2.0` or newer.
 
 ## Example
 

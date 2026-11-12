@@ -11,9 +11,9 @@ open class PlatformV2AutomationAPI {
 
     /**
      Cancel an outgoing Steam trade offer
-     
-     - parameter tradeId: (path)  
-     - parameter idempotencyKey: (header)  
+
+     - parameter tradeId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -28,10 +28,10 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter tradeId: (path)  
-     - parameter idempotencyKey: (header)  
+     - parameter tradeId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func cancelV2TradeWithRequestBuilder(tradeId: UUID, idempotencyKey: String, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/trades/{trade_id}/cancel"
@@ -56,9 +56,9 @@ open class PlatformV2AutomationAPI {
 
     /**
      Cancel an unexecuted trade instruction
-     
-     - parameter intentId: (path) Workspace-owned customer-directed trade intent identifier 
-     - parameter idempotencyKey: (header)  
+
+     - parameter intentId: (path) Workspace-owned customer-directed trade intent identifier
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2TradeIntentResponse
      */
@@ -73,10 +73,10 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter intentId: (path) Workspace-owned customer-directed trade intent identifier 
-     - parameter idempotencyKey: (header)  
+     - parameter intentId: (path) Workspace-owned customer-directed trade intent identifier
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2TradeIntentResponse> 
+     - returns: RequestBuilder<V2TradeIntentResponse>
      */
     open class func cancelV2TradeIntentWithRequestBuilder(intentId: UUID, idempotencyKey: String, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2TradeIntentResponse> {
         var localVariablePath = "/v2/trade-intents/{intent_id}/cancel"
@@ -101,10 +101,10 @@ open class PlatformV2AutomationAPI {
 
     /**
      Check the partner-specific Steam trade hold
-     
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2SteamTradeHoldRequest: (body)  
+
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2SteamTradeHoldRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -119,11 +119,11 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2SteamTradeHoldRequest: (body)  
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2SteamTradeHoldRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func checkV2SteamTradeHoldWithRequestBuilder(accountId: Int64, idempotencyKey: String, v2SteamTradeHoldRequest: V2SteamTradeHoldRequest, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/trade-hold-check"
@@ -149,11 +149,11 @@ open class PlatformV2AutomationAPI {
 
     /**
      Complete authenticator recovery with an SMS code
-     
-     - parameter accountId: (path)  
-     - parameter recoveryId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2AuthenticatorRecoveryCompleteRequest: (body)  
+
+     - parameter accountId: (path)
+     - parameter recoveryId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2AuthenticatorRecoveryCompleteRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -168,12 +168,12 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter recoveryId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2AuthenticatorRecoveryCompleteRequest: (body)  
+     - parameter accountId: (path)
+     - parameter recoveryId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2AuthenticatorRecoveryCompleteRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func completeV2SteamAuthenticatorRecoveryWithRequestBuilder(accountId: Int64, recoveryId: UUID, idempotencyKey: String, v2AuthenticatorRecoveryCompleteRequest: V2AuthenticatorRecoveryCompleteRequest, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/authenticator/recovery/{recovery_id}/complete"
@@ -202,8 +202,8 @@ open class PlatformV2AutomationAPI {
 
     /**
      Create a Steam account record
-     
-     - parameter v2SteamAccountCreateRequest: (body)  
+
+     - parameter v2SteamAccountCreateRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2SteamAccount
      */
@@ -218,9 +218,9 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter v2SteamAccountCreateRequest: (body)  
+     - parameter v2SteamAccountCreateRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2SteamAccount> 
+     - returns: RequestBuilder<V2SteamAccount>
      */
     open class func createV2SteamAccountWithRequestBuilder(v2SteamAccountCreateRequest: V2SteamAccountCreateRequest, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2SteamAccount> {
         let localVariablePath = "/v2/steam/accounts"
@@ -242,9 +242,9 @@ open class PlatformV2AutomationAPI {
 
     /**
      Create a trade instruction
-     
-     - parameter idempotencyKey: (header)  
-     - parameter v2CreateTradeIntentRequest: (body)  
+
+     - parameter idempotencyKey: (header)
+     - parameter v2CreateTradeIntentRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2TradeIntentResponse
      */
@@ -259,10 +259,10 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter idempotencyKey: (header)  
-     - parameter v2CreateTradeIntentRequest: (body)  
+     - parameter idempotencyKey: (header)
+     - parameter v2CreateTradeIntentRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2TradeIntentResponse> 
+     - returns: RequestBuilder<V2TradeIntentResponse>
      */
     open class func createV2TradeIntentWithRequestBuilder(idempotencyKey: String, v2CreateTradeIntentRequest: V2CreateTradeIntentRequest, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2TradeIntentResponse> {
         let localVariablePath = "/v2/trade-intents"
@@ -285,9 +285,9 @@ open class PlatformV2AutomationAPI {
 
     /**
      Decline an incoming Steam trade offer
-     
-     - parameter tradeId: (path)  
-     - parameter idempotencyKey: (header)  
+
+     - parameter tradeId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -302,10 +302,10 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter tradeId: (path)  
-     - parameter idempotencyKey: (header)  
+     - parameter tradeId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func declineV2TradeWithRequestBuilder(tradeId: UUID, idempotencyKey: String, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/trades/{trade_id}/decline"
@@ -330,9 +330,9 @@ open class PlatformV2AutomationAPI {
 
     /**
      Queue account disconnection and credential destruction
-     
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
+
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -347,10 +347,10 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func disconnectV2SteamAccountWithRequestBuilder(accountId: Int64, idempotencyKey: String, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/disconnect"
@@ -375,9 +375,9 @@ open class PlatformV2AutomationAPI {
 
     /**
      Begin Steam mobile-authenticator enrollment
-     
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
+
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -392,10 +392,10 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func enrollV2SteamAuthenticatorWithRequestBuilder(accountId: Int64, idempotencyKey: String, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/authenticator/enroll"
@@ -420,10 +420,10 @@ open class PlatformV2AutomationAPI {
 
     /**
      Execute a trade instruction
-     
-     - parameter intentId: (path) Workspace-owned customer-directed trade intent identifier 
-     - parameter idempotencyKey: (header)  
-     - parameter v2ExecuteTradeIntentRequest: (body)  
+
+     - parameter intentId: (path) Workspace-owned customer-directed trade intent identifier
+     - parameter idempotencyKey: (header)
+     - parameter v2ExecuteTradeIntentRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2TradeIntentExecutionResponse
      */
@@ -438,11 +438,11 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter intentId: (path) Workspace-owned customer-directed trade intent identifier 
-     - parameter idempotencyKey: (header)  
-     - parameter v2ExecuteTradeIntentRequest: (body)  
+     - parameter intentId: (path) Workspace-owned customer-directed trade intent identifier
+     - parameter idempotencyKey: (header)
+     - parameter v2ExecuteTradeIntentRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2TradeIntentExecutionResponse> 
+     - returns: RequestBuilder<V2TradeIntentExecutionResponse>
      */
     open class func executeV2TradeIntentWithRequestBuilder(intentId: UUID, idempotencyKey: String, v2ExecuteTradeIntentRequest: V2ExecuteTradeIntentRequest, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2TradeIntentExecutionResponse> {
         var localVariablePath = "/v2/trade-intents/{intent_id}/execute"
@@ -467,11 +467,59 @@ open class PlatformV2AutomationAPI {
     }
 
     /**
+     Fetch a Steam partner trade inventory
+
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2SteamPartnerInventoryRequest: (body)
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: V2CommandReceipt
+     */
+    open class func fetchV2SteamPartnerInventory(accountId: Int64, idempotencyKey: String, v2SteamPartnerInventoryRequest: V2SteamPartnerInventoryRequest, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) async throws(ErrorResponse) -> V2CommandReceipt {
+        return try await fetchV2SteamPartnerInventoryWithRequestBuilder(accountId: accountId, idempotencyKey: idempotencyKey, v2SteamPartnerInventoryRequest: v2SteamPartnerInventoryRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Fetch a Steam partner trade inventory
+     - POST /v2/steam/accounts/{account_id}/partner-inventory/fetch
+     - Queues a private read of the trade-eligible CS2 assets Steam exposes to one connected viewer account. The optional partner token and proxy credentials are encrypted immediately. A supplied proxy handles every page and retry; the request fails rather than switching to another egress path. The result represents trade-eligible coverage; trade creation and complete owner coverage remain separate operations.
+     - API Key:
+       - type: apiKey X-API-Key (HEADER)
+       - name: PlatformAPIKey
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2SteamPartnerInventoryRequest: (body)
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<V2CommandReceipt>
+     */
+    open class func fetchV2SteamPartnerInventoryWithRequestBuilder(accountId: Int64, idempotencyKey: String, v2SteamPartnerInventoryRequest: V2SteamPartnerInventoryRequest, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
+        var localVariablePath = "/v2/steam/accounts/{account_id}/partner-inventory/fetch"
+        let accountIdPreEscape = "\(APIHelper.mapValueToPathItem(accountId))"
+        let accountIdPostEscape = accountIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{account_id}", with: accountIdPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: v2SteamPartnerInventoryRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+            "Idempotency-Key": idempotencyKey.asParameter(codableHelper: apiConfiguration.codableHelper),
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<V2CommandReceipt>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
      Fetch the connected account's inbound trade-offer link
-     
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2EncryptedDeliveryRequest: (body)  
+
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2EncryptedDeliveryRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -487,11 +535,11 @@ open class PlatformV2AutomationAPI {
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
      - responseHeaders: [Cache-Control(String)]
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2EncryptedDeliveryRequest: (body)  
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2EncryptedDeliveryRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func fetchV2SteamTradeLinkWithRequestBuilder(accountId: Int64, idempotencyKey: String, v2EncryptedDeliveryRequest: V2EncryptedDeliveryRequest, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/trade-link"
@@ -517,11 +565,11 @@ open class PlatformV2AutomationAPI {
 
     /**
      Finalize Steam mobile-authenticator enrollment
-     
-     - parameter accountId: (path)  
-     - parameter enrollmentId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2AuthenticatorFinalizeRequest: (body)  
+
+     - parameter accountId: (path)
+     - parameter enrollmentId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2AuthenticatorFinalizeRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -536,12 +584,12 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter enrollmentId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2AuthenticatorFinalizeRequest: (body)  
+     - parameter accountId: (path)
+     - parameter enrollmentId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2AuthenticatorFinalizeRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func finalizeV2SteamAuthenticatorWithRequestBuilder(accountId: Int64, enrollmentId: UUID, idempotencyKey: String, v2AuthenticatorFinalizeRequest: V2AuthenticatorFinalizeRequest, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/authenticator/enroll/{enrollment_id}/finalize"
@@ -570,10 +618,10 @@ open class PlatformV2AutomationAPI {
 
     /**
      Generate a Steam Guard code
-     
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2EncryptedDeliveryRequest: (body)  
+
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2EncryptedDeliveryRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -588,11 +636,11 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2EncryptedDeliveryRequest: (body)  
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2EncryptedDeliveryRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func generateV2SteamGuardCodeWithRequestBuilder(accountId: Int64, idempotencyKey: String, v2EncryptedDeliveryRequest: V2EncryptedDeliveryRequest, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/guard/code"
@@ -618,8 +666,8 @@ open class PlatformV2AutomationAPI {
 
     /**
      Read the latest authenticated inventory
-     
-     - parameter accountId: (path)  
+
+     - parameter accountId: (path)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2GetAuthenticatedSteamInventoryResponse
      */
@@ -634,9 +682,9 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
+     - parameter accountId: (path)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2GetAuthenticatedSteamInventoryResponse> 
+     - returns: RequestBuilder<V2GetAuthenticatedSteamInventoryResponse>
      */
     open class func getV2AuthenticatedSteamInventoryWithRequestBuilder(accountId: Int64, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2GetAuthenticatedSteamInventoryResponse> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/inventory"
@@ -661,8 +709,8 @@ open class PlatformV2AutomationAPI {
 
     /**
      Read Steam account health
-     
-     - parameter accountId: (path)  
+
+     - parameter accountId: (path)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2GetSteamAccountHealthResponse
      */
@@ -677,9 +725,9 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
+     - parameter accountId: (path)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2GetSteamAccountHealthResponse> 
+     - returns: RequestBuilder<V2GetSteamAccountHealthResponse>
      */
     open class func getV2SteamAccountHealthWithRequestBuilder(accountId: Int64, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2GetSteamAccountHealthResponse> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/health"
@@ -704,8 +752,8 @@ open class PlatformV2AutomationAPI {
 
     /**
      Read a Steam command result
-     
-     - parameter commandId: (path)  
+
+     - parameter commandId: (path)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandStatus
      */
@@ -720,9 +768,9 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter commandId: (path)  
+     - parameter commandId: (path)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandStatus> 
+     - returns: RequestBuilder<V2CommandStatus>
      */
     open class func getV2SteamCommandWithRequestBuilder(commandId: UUID, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandStatus> {
         var localVariablePath = "/v2/steam/commands/{command_id}"
@@ -746,9 +794,57 @@ open class PlatformV2AutomationAPI {
     }
 
     /**
+     Read an authenticated Steam partner inventory
+
+     - parameter accountId: (path)
+     - parameter commandId: (path)
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: V2GetSteamPartnerInventoryResponse
+     */
+    open class func getV2SteamPartnerInventory(accountId: Int64, commandId: UUID, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) async throws(ErrorResponse) -> V2GetSteamPartnerInventoryResponse {
+        return try await getV2SteamPartnerInventoryWithRequestBuilder(accountId: accountId, commandId: commandId, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Read an authenticated Steam partner inventory
+     - GET /v2/steam/accounts/{account_id}/partner-inventory/{command_id}
+     - Returns the tenant-private trade-eligible observation produced by one completed partner-inventory command. Public inventory caching remains isolated to public observations.
+     - API Key:
+       - type: apiKey X-API-Key (HEADER)
+       - name: PlatformAPIKey
+     - parameter accountId: (path)
+     - parameter commandId: (path)
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<V2GetSteamPartnerInventoryResponse>
+     */
+    open class func getV2SteamPartnerInventoryWithRequestBuilder(accountId: Int64, commandId: UUID, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2GetSteamPartnerInventoryResponse> {
+        var localVariablePath = "/v2/steam/accounts/{account_id}/partner-inventory/{command_id}"
+        let accountIdPreEscape = "\(APIHelper.mapValueToPathItem(accountId))"
+        let accountIdPostEscape = accountIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{account_id}", with: accountIdPostEscape, options: .literal, range: nil)
+        let commandIdPreEscape = "\(APIHelper.mapValueToPathItem(commandId))"
+        let commandIdPostEscape = commandIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{command_id}", with: commandIdPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<V2GetSteamPartnerInventoryResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
      Read the account trade policy
-     
-     - parameter accountId: (path)  
+
+     - parameter accountId: (path)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2SteamTradePolicy
      */
@@ -763,9 +859,9 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
+     - parameter accountId: (path)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2SteamTradePolicy> 
+     - returns: RequestBuilder<V2SteamTradePolicy>
      */
     open class func getV2SteamTradePolicyWithRequestBuilder(accountId: Int64, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2SteamTradePolicy> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/trade-policy"
@@ -790,8 +886,8 @@ open class PlatformV2AutomationAPI {
 
     /**
      Read a Steam trade operation
-     
-     - parameter tradeId: (path)  
+
+     - parameter tradeId: (path)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2TradeOperation
      */
@@ -806,9 +902,9 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter tradeId: (path)  
+     - parameter tradeId: (path)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2TradeOperation> 
+     - returns: RequestBuilder<V2TradeOperation>
      */
     open class func getV2TradeWithRequestBuilder(tradeId: UUID, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2TradeOperation> {
         var localVariablePath = "/v2/trades/{trade_id}"
@@ -833,8 +929,8 @@ open class PlatformV2AutomationAPI {
 
     /**
      Read a trade instruction
-     
-     - parameter intentId: (path) Workspace-owned customer-directed trade intent identifier 
+
+     - parameter intentId: (path) Workspace-owned customer-directed trade intent identifier
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2TradeIntentResponse
      */
@@ -849,9 +945,9 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter intentId: (path) Workspace-owned customer-directed trade intent identifier 
+     - parameter intentId: (path) Workspace-owned customer-directed trade intent identifier
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2TradeIntentResponse> 
+     - returns: RequestBuilder<V2TradeIntentResponse>
      */
     open class func getV2TradeIntentWithRequestBuilder(intentId: UUID, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2TradeIntentResponse> {
         var localVariablePath = "/v2/trade-intents/{intent_id}"
@@ -876,10 +972,10 @@ open class PlatformV2AutomationAPI {
 
     /**
      Import an existing Steam mobile authenticator
-     
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2AuthenticatorImport: (body)  
+
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2AuthenticatorImport: (body)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -894,11 +990,11 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2AuthenticatorImport: (body)  
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2AuthenticatorImport: (body)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func importV2SteamAuthenticatorWithRequestBuilder(accountId: Int64, idempotencyKey: String, v2AuthenticatorImport: V2AuthenticatorImport, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/authenticator/import"
@@ -924,10 +1020,10 @@ open class PlatformV2AutomationAPI {
 
     /**
      Store a Steam Web API key
-     
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2SteamWebAPIKeyRequest: (body)  
+
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2SteamWebAPIKeyRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -943,11 +1039,11 @@ open class PlatformV2AutomationAPI {
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
      - responseHeaders: [Cache-Control(String)]
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2SteamWebAPIKeyRequest: (body)  
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2SteamWebAPIKeyRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func importV2SteamWebAPIKeyWithRequestBuilder(accountId: Int64, idempotencyKey: String, v2SteamWebAPIKeyRequest: V2SteamWebAPIKeyRequest, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/web-api-key"
@@ -973,8 +1069,8 @@ open class PlatformV2AutomationAPI {
 
     /**
      List authenticated inventory history
-     
-     - parameter accountId: (path)  
+
+     - parameter accountId: (path)
      - parameter limit: (query)  (optional, default to 25)
      - parameter cursor: (query)  (optional)
      - parameter apiConfiguration: The configuration for the http request.
@@ -991,11 +1087,11 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
+     - parameter accountId: (path)
      - parameter limit: (query)  (optional, default to 25)
      - parameter cursor: (query)  (optional)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2GetAuthenticatedInventoryHistoryResponse> 
+     - returns: RequestBuilder<V2GetAuthenticatedInventoryHistoryResponse>
      */
     open class func listV2AuthenticatedSteamInventoryHistoryWithRequestBuilder(accountId: Int64, limit: Int? = nil, cursor: String? = nil, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2GetAuthenticatedInventoryHistoryResponse> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/inventory/history"
@@ -1024,7 +1120,7 @@ open class PlatformV2AutomationAPI {
 
     /**
      List connected Steam accounts
-     
+
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2ListSteamAccountsResponse
      */
@@ -1040,7 +1136,7 @@ open class PlatformV2AutomationAPI {
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2ListSteamAccountsResponse> 
+     - returns: RequestBuilder<V2ListSteamAccountsResponse>
      */
     open class func listV2SteamAccountsWithRequestBuilder(apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2ListSteamAccountsResponse> {
         let localVariablePath = "/v2/steam/accounts"
@@ -1073,7 +1169,7 @@ open class PlatformV2AutomationAPI {
 
     /**
      List Steam automation commands
-     
+
      - parameter accountId: (query)  (optional)
      - parameter state: (query)  (optional)
      - parameter type: (query)  (optional)
@@ -1099,7 +1195,7 @@ open class PlatformV2AutomationAPI {
      - parameter limit: (query)  (optional, default to 50)
      - parameter cursor: (query)  (optional)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2SteamCommandPageResponse> 
+     - returns: RequestBuilder<V2SteamCommandPageResponse>
      */
     open class func listV2SteamCommandsWithRequestBuilder(accountId: Int64? = nil, state: State_listV2SteamCommands? = nil, type: String? = nil, limit: Int? = nil, cursor: String? = nil, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2SteamCommandPageResponse> {
         let localVariablePath = "/v2/steam/commands"
@@ -1128,9 +1224,9 @@ open class PlatformV2AutomationAPI {
 
     /**
      List Steam mobile confirmations
-     
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
+
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -1145,10 +1241,10 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func listV2SteamConfirmationsWithRequestBuilder(accountId: Int64, idempotencyKey: String, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/guard/confirmations"
@@ -1173,7 +1269,7 @@ open class PlatformV2AutomationAPI {
 
     /**
      List trade instructions
-     
+
      - parameter accountId: (query)  (optional)
      - parameter state: (query) Comma-separated intent states (optional)
      - parameter partnerSteamId64: (query)  (optional)
@@ -1201,7 +1297,7 @@ open class PlatformV2AutomationAPI {
      - parameter limit: (query)  (optional, default to 50)
      - parameter cursor: (query)  (optional)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2TradeIntentPageResponse> 
+     - returns: RequestBuilder<V2TradeIntentPageResponse>
      */
     open class func listV2TradeIntentsWithRequestBuilder(accountId: Int64? = nil, state: String? = nil, partnerSteamId64: String? = nil, externalReference: String? = nil, limit: Int? = nil, cursor: String? = nil, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2TradeIntentPageResponse> {
         let localVariablePath = "/v2/trade-intents"
@@ -1239,7 +1335,7 @@ open class PlatformV2AutomationAPI {
 
     /**
      List Steam trade operations
-     
+
      - parameter accountId: (query) Restrict results to one workspace-owned managed account. (optional)
      - parameter direction: (query)  (optional)
      - parameter state: (query) One state or a comma-separated set of lifecycle states. (optional)
@@ -1269,7 +1365,7 @@ open class PlatformV2AutomationAPI {
      - parameter limit: (query)  (optional, default to 50)
      - parameter cursor: (query) Opaque keyset cursor from the preceding response. (optional)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2ListTradesResponse> 
+     - returns: RequestBuilder<V2ListTradesResponse>
      */
     open class func listV2TradesWithRequestBuilder(accountId: Int64? = nil, direction: Direction_listV2Trades? = nil, state: String? = nil, partnerSteamId64: String? = nil, externalOfferId: String? = nil, limit: Int? = nil, cursor: String? = nil, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2ListTradesResponse> {
         let localVariablePath = "/v2/trades"
@@ -1300,10 +1396,10 @@ open class PlatformV2AutomationAPI {
 
     /**
      Authenticate a Steam account
-     
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2SteamLoginRequest: (body)  
+
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2SteamLoginRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -1318,11 +1414,11 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2SteamLoginRequest: (body)  
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2SteamLoginRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func loginV2SteamAccountWithRequestBuilder(accountId: Int64, idempotencyKey: String, v2SteamLoginRequest: V2SteamLoginRequest, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/login"
@@ -1348,8 +1444,8 @@ open class PlatformV2AutomationAPI {
 
     /**
      Validate a trade instruction
-     
-     - parameter v2PreviewTradeIntentRequest: (body)  
+
+     - parameter v2PreviewTradeIntentRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2TradeIntentPreviewResponse
      */
@@ -1364,9 +1460,9 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter v2PreviewTradeIntentRequest: (body)  
+     - parameter v2PreviewTradeIntentRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2TradeIntentPreviewResponse> 
+     - returns: RequestBuilder<V2TradeIntentPreviewResponse>
      */
     open class func previewV2TradeIntentWithRequestBuilder(v2PreviewTradeIntentRequest: V2PreviewTradeIntentRequest, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2TradeIntentPreviewResponse> {
         let localVariablePath = "/v2/trade-intents/preview"
@@ -1388,9 +1484,9 @@ open class PlatformV2AutomationAPI {
 
     /**
      Refresh one Steam trade offer
-     
-     - parameter tradeId: (path)  
-     - parameter idempotencyKey: (header)  
+
+     - parameter tradeId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -1405,10 +1501,10 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter tradeId: (path)  
-     - parameter idempotencyKey: (header)  
+     - parameter tradeId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func reconcileV2TradeWithRequestBuilder(tradeId: UUID, idempotencyKey: String, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/trades/{trade_id}/reconcile"
@@ -1433,9 +1529,9 @@ open class PlatformV2AutomationAPI {
 
     /**
      Renew a Steam Community session
-     
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
+
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -1450,10 +1546,10 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func refreshV2SteamSessionWithRequestBuilder(accountId: Int64, idempotencyKey: String, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/refresh-session"
@@ -1478,9 +1574,9 @@ open class PlatformV2AutomationAPI {
 
     /**
      Remove the active Steam mobile authenticator
-     
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
+
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
      - parameter v2AuthenticatorRemoveRequest: (body)  (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
@@ -1496,11 +1592,11 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
      - parameter v2AuthenticatorRemoveRequest: (body)  (optional)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func removeV2SteamAuthenticatorWithRequestBuilder(accountId: Int64, idempotencyKey: String, v2AuthenticatorRemoveRequest: V2AuthenticatorRemoveRequest? = nil, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/authenticator/remove"
@@ -1526,11 +1622,11 @@ open class PlatformV2AutomationAPI {
 
     /**
      Accept or deny a Steam mobile confirmation
-     
-     - parameter accountId: (path)  
-     - parameter confirmationId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2ConfirmationResolveRequest: (body)  
+
+     - parameter accountId: (path)
+     - parameter confirmationId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2ConfirmationResolveRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -1545,12 +1641,12 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter confirmationId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2ConfirmationResolveRequest: (body)  
+     - parameter accountId: (path)
+     - parameter confirmationId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2ConfirmationResolveRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func resolveV2SteamConfirmationWithRequestBuilder(accountId: Int64, confirmationId: String, idempotencyKey: String, v2ConfirmationResolveRequest: V2ConfirmationResolveRequest, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/guard/confirmations/{confirmation_id}"
@@ -1579,10 +1675,10 @@ open class PlatformV2AutomationAPI {
 
     /**
      Resolve selected Steam mobile confirmations
-     
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2ConfirmationBatchResolveRequest: (body)  
+
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2ConfirmationBatchResolveRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -1597,11 +1693,11 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
-     - parameter v2ConfirmationBatchResolveRequest: (body)  
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
+     - parameter v2ConfirmationBatchResolveRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func resolveV2SteamConfirmationBatchWithRequestBuilder(accountId: Int64, idempotencyKey: String, v2ConfirmationBatchResolveRequest: V2ConfirmationBatchResolveRequest, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/guard/confirmations/batch"
@@ -1627,9 +1723,9 @@ open class PlatformV2AutomationAPI {
 
     /**
      Begin lost-revocation-code authenticator recovery
-     
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
+
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -1644,10 +1740,10 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func startV2SteamAuthenticatorRecoveryWithRequestBuilder(accountId: Int64, idempotencyKey: String, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/authenticator/recovery"
@@ -1672,9 +1768,9 @@ open class PlatformV2AutomationAPI {
 
     /**
      Synchronize the connected account inventory
-     
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
+
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -1689,10 +1785,10 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func syncV2AuthenticatedSteamInventoryWithRequestBuilder(accountId: Int64, idempotencyKey: String, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/inventory/sync"
@@ -1717,9 +1813,9 @@ open class PlatformV2AutomationAPI {
 
     /**
      Synchronize one page of Steam trade history
-     
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
+
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
      - parameter v2SteamTradeHistorySyncRequest: (body)  (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
@@ -1735,11 +1831,11 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
      - parameter v2SteamTradeHistorySyncRequest: (body)  (optional)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func syncV2SteamTradeHistoryWithRequestBuilder(accountId: Int64, idempotencyKey: String, v2SteamTradeHistorySyncRequest: V2SteamTradeHistorySyncRequest? = nil, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/trades/history/sync"
@@ -1765,9 +1861,9 @@ open class PlatformV2AutomationAPI {
 
     /**
      Synchronize Steam trade offers
-     
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
+
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2CommandReceipt
      */
@@ -1782,10 +1878,10 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter idempotencyKey: (header)  
+     - parameter accountId: (path)
+     - parameter idempotencyKey: (header)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2CommandReceipt> 
+     - returns: RequestBuilder<V2CommandReceipt>
      */
     open class func syncV2SteamTradesWithRequestBuilder(accountId: Int64, idempotencyKey: String, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2CommandReceipt> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/trades/sync"
@@ -1810,9 +1906,9 @@ open class PlatformV2AutomationAPI {
 
     /**
      Pause or resume Steam account changes
-     
-     - parameter accountId: (path)  
-     - parameter v2SteamAccountControlRequest: (body)  
+
+     - parameter accountId: (path)
+     - parameter v2SteamAccountControlRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2UpdateSteamAccountControlsResponse
      */
@@ -1827,10 +1923,10 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter v2SteamAccountControlRequest: (body)  
+     - parameter accountId: (path)
+     - parameter v2SteamAccountControlRequest: (body)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2UpdateSteamAccountControlsResponse> 
+     - returns: RequestBuilder<V2UpdateSteamAccountControlsResponse>
      */
     open class func updateV2SteamAccountControlsWithRequestBuilder(accountId: Int64, v2SteamAccountControlRequest: V2SteamAccountControlRequest, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2UpdateSteamAccountControlsResponse> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/controls"
@@ -1855,9 +1951,9 @@ open class PlatformV2AutomationAPI {
 
     /**
      Replace the account trade policy
-     
-     - parameter accountId: (path)  
-     - parameter v2UpdateSteamTradePolicy: (body)  
+
+     - parameter accountId: (path)
+     - parameter v2UpdateSteamTradePolicy: (body)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2SteamTradePolicy
      */
@@ -1872,10 +1968,10 @@ open class PlatformV2AutomationAPI {
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
-     - parameter accountId: (path)  
-     - parameter v2UpdateSteamTradePolicy: (body)  
+     - parameter accountId: (path)
+     - parameter v2UpdateSteamTradePolicy: (body)
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<V2SteamTradePolicy> 
+     - returns: RequestBuilder<V2SteamTradePolicy>
      */
     open class func updateV2SteamTradePolicyWithRequestBuilder(accountId: Int64, v2UpdateSteamTradePolicy: V2UpdateSteamTradePolicy, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2SteamTradePolicy> {
         var localVariablePath = "/v2/steam/accounts/{account_id}/trade-policy"
