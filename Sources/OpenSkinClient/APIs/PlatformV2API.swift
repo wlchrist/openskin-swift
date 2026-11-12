@@ -133,6 +133,51 @@ open class PlatformV2API {
     }
 
     /**
+     Fetch a CS2 inventory through a request-scoped proxy
+
+     - parameter steamId: (path)
+     - parameter v2InventoryFetchRequest: (body)
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: V2GetInventoryResponse
+     */
+    open class func fetchV2InventoryWithRequestProxy(steamId: String, v2InventoryFetchRequest: V2InventoryFetchRequest, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) async throws(ErrorResponse) -> V2GetInventoryResponse {
+        return try await fetchV2InventoryWithRequestProxyWithRequestBuilder(steamId: steamId, v2InventoryFetchRequest: v2InventoryFetchRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Fetch a CS2 inventory through a request-scoped proxy
+     - POST /v2/inventories/{steam_id}/fetch
+     - Reads an acceptable shared public snapshot when available; otherwise fetches the public Steam inventory only through the HTTP(S) proxy supplied in this request. Proxy configuration and credentials remain request-scoped, and proxy failures return a sanitized upstream error with platform and direct fallback disabled.
+     - API Key:
+       - type: apiKey X-API-Key (HEADER)
+       - name: PlatformAPIKey
+     - parameter steamId: (path)
+     - parameter v2InventoryFetchRequest: (body)
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<V2GetInventoryResponse>
+     */
+    open class func fetchV2InventoryWithRequestProxyWithRequestBuilder(steamId: String, v2InventoryFetchRequest: V2InventoryFetchRequest, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2GetInventoryResponse> {
+        var localVariablePath = "/v2/inventories/{steam_id}/fetch"
+        let steamIdPreEscape = "\(APIHelper.mapValueToPathItem(steamId))"
+        let steamIdPostEscape = steamIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{steam_id}", with: steamIdPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: v2InventoryFetchRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<V2GetInventoryResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
      Read the latest catalog release
      
      - parameter apiConfiguration: The configuration for the http request.
@@ -508,25 +553,31 @@ open class PlatformV2API {
      Read a CS2 inventory
      
      - parameter steamId: (path)  
+     - parameter maxAgeSeconds: (query) Maximum observation age before attempting Steam. If omitted, use the saved observation at any age. Cannot accompany force_refresh&#x3D;true. (optional)
+     - parameter forceRefresh: (query) Attempt Steam even when a cached observation qualifies; a successful public response replaces the saved durable observation. Default false. (optional)
+     - parameter staleIfErrorSeconds: (query) Maximum observation age allowed only after a Steam failure or rate limit; default 1800. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: V2GetInventoryResponse
      */
-    open class func getV2Inventory(steamId: String, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) async throws(ErrorResponse) -> V2GetInventoryResponse {
-        return try await getV2InventoryWithRequestBuilder(steamId: steamId, apiConfiguration: apiConfiguration).execute().body
+    open class func getV2Inventory(steamId: String, maxAgeSeconds: Int? = nil, forceRefresh: Bool? = nil, staleIfErrorSeconds: Int? = nil, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) async throws(ErrorResponse) -> V2GetInventoryResponse {
+        return try await getV2InventoryWithRequestBuilder(steamId: steamId, maxAgeSeconds: maxAgeSeconds, forceRefresh: forceRefresh, staleIfErrorSeconds: staleIfErrorSeconds, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
      Read a CS2 inventory
      - GET /v2/inventories/{steam_id}
-     - Returns any public Steam inventory with one record per asset and exact Valve-provided item state when available, including wear, paint seed, applied stickers, charms or keychains with pattern and offsets, StatTrak, and name tag. A Platform API key authenticates the API caller, and a publicly visible Steam inventory is the owner's sole requirement.
+     - Returns any public Steam inventory with one record per asset and exact Valve-provided item state when available. Ordinary reads return the first saved public observation at any age and avoid a Steam request. An explicit max_age_seconds may fetch a newer observation while retaining the saved copy. A successful force_refresh request replaces it; a private response invalidates it. A Platform API key authenticates the API caller, and a publicly visible Steam inventory is the owner's sole requirement.
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey
      - parameter steamId: (path)  
+     - parameter maxAgeSeconds: (query) Maximum observation age before attempting Steam. If omitted, use the saved observation at any age. Cannot accompany force_refresh&#x3D;true. (optional)
+     - parameter forceRefresh: (query) Attempt Steam even when a cached observation qualifies; a successful public response replaces the saved durable observation. Default false. (optional)
+     - parameter staleIfErrorSeconds: (query) Maximum observation age allowed only after a Steam failure or rate limit; default 1800. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<V2GetInventoryResponse> 
      */
-    open class func getV2InventoryWithRequestBuilder(steamId: String, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2GetInventoryResponse> {
+    open class func getV2InventoryWithRequestBuilder(steamId: String, maxAgeSeconds: Int? = nil, forceRefresh: Bool? = nil, staleIfErrorSeconds: Int? = nil, apiConfiguration: OpenSkinClientAPIConfiguration = OpenSkinClientAPIConfiguration.shared) -> RequestBuilder<V2GetInventoryResponse> {
         var localVariablePath = "/v2/inventories/{steam_id}"
         let steamIdPreEscape = "\(APIHelper.mapValueToPathItem(steamId))"
         let steamIdPostEscape = steamIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -534,7 +585,12 @@ open class PlatformV2API {
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
 
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+        var localVariableUrlComponents = URLComponents(string: localVariableURLString)
+        localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
+            "max_age_seconds": (wrappedValue: maxAgeSeconds?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "force_refresh": (wrappedValue: forceRefresh?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "stale_if_error_seconds": (wrappedValue: staleIfErrorSeconds?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+        ])
 
         let localVariableNillableHeaders: [String: (any Sendable)?] = [
             :
@@ -561,7 +617,7 @@ open class PlatformV2API {
     /**
      Resolve up to 20 CS2 inventories
      - POST /v2/inventories/batch
-     - Results preserve input order and report failures per SteamID.
+     - Results preserve input order and report failures per SteamID. An optional freshness object applies one policy to the whole batch; omitted fields use scalar defaults.
      - API Key:
        - type: apiKey X-API-Key (HEADER)
        - name: PlatformAPIKey

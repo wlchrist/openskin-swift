@@ -4,8 +4,8 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.15'
   s.tvos.deployment_target = '13.0'
   s.watchos.deployment_target = '6.0'
-  s.version = '0.1.0'
-  s.source = { :git => 'https://github.com/wlchrist/openskin-swift.git', :tag => 'v0.1.0' }
+  s.version = '0.2.0'
+  s.source = { :git => 'https://github.com/wlchrist/openskin-swift.git', :tag => 'v0.2.0' }
   s.authors = 'OpenSkin'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.homepage = 'https://openskin.dev'

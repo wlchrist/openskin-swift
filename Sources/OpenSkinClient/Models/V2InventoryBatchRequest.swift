@@ -9,13 +9,19 @@ import Foundation
 
 public struct V2InventoryBatchRequest: Sendable, Codable, Hashable {
 
+    public var proxy: V2InventoryRequestProxy?
+    public var freshness: V2InventoryFreshness?
     public var steamIds: [String]
 
-    public init(steamIds: [String]) {
+    public init(proxy: V2InventoryRequestProxy? = nil, freshness: V2InventoryFreshness? = nil, steamIds: [String]) {
+        self.proxy = proxy
+        self.freshness = freshness
         self.steamIds = steamIds
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
+        case proxy
+        case freshness
         case steamIds = "steam_ids"
     }
 
@@ -23,6 +29,8 @@ public struct V2InventoryBatchRequest: Sendable, Codable, Hashable {
 
     public func encode(to encoder: Encoder) throws {
         var keyedContainer = encoder.container(keyedBy: CodingKeys.self)
+        try keyedContainer.encodeIfPresent(proxy, forKey: .proxy)
+        try keyedContainer.encodeIfPresent(freshness, forKey: .freshness)
         try keyedContainer.encode(steamIds, forKey: .steamIds)
     }
 }
